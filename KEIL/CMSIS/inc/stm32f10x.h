@@ -67,10 +67,10 @@
   /* #define STM32F10X_LD_VL */  /*!< STM32F10X_LD_VL: STM32 Low density Value Line devices */  
   /* #define STM32F10X_MD */     /*!< STM32F10X_MD: STM32 Medium density devices */
   /* #define STM32F10X_MD_VL */  /*!< STM32F10X_MD_VL: STM32 Medium density Value Line devices */  
-     #define STM32F10X_HD        /*!< STM32F10X_HD: STM32 High density devices */
+  /* #define STM32F10X_HD */     /*!< STM32F10X_HD: STM32 High density devices */
   /* #define STM32F10X_HD_VL */  /*!< STM32F10X_HD_VL: STM32 High density value line devices */  
   /* #define STM32F10X_XL */     /*!< STM32F10X_XL: STM32 XL-density devices */
-  /* #define STM32F10X_CL */     /*!< STM32F10X_CL: STM32 Connectivity line devices */
+     #define STM32F10X_CL        /*!< STM32F10X_CL: STM32 Connectivity line devices */
 #endif
 /*  Tip: To avoid modifying this file each time you need to switch between these
         devices, you can define the device in your toolchain compiler preprocessor.
@@ -114,7 +114,7 @@
   */           
 #if !defined  HSE_VALUE
  #ifdef STM32F10X_CL   
-  #define HSE_VALUE    ((uint32_t)25000000) /*!< Value of the External oscillator in Hz */
+  #define HSE_VALUE    ((uint32_t)10000000) /*!< Value of the External oscillator in Hz */
  #else 
   #define HSE_VALUE    ((uint32_t)10000000) /*!< Value of the External oscillator in Hz */
  #endif /* STM32F10X_CL */

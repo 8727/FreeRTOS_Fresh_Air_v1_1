@@ -85,31 +85,6 @@ void W25QxxWritePage(uint16_t page, uint8_t *buff){
   W25QxxWriteOff();
 }
 
-void W25QxxReadTable(void){
-  uint16_t i;
-  W25Qxx_CS_LOW;
-  W25QxxWriteRead(CMD_FAST_READ);
-  W25QxxWriteRead(0x00);
-  W25QxxWriteRead(0x00);
-  W25QxxWriteRead(0x00);
-  W25QxxWriteRead(0x00);
-  for(i = 0x00; i < 0x0100; i++){
-    img[i].address = W25QxxWriteRead(0x00) << 0x08;
-    img[i].address |= W25QxxWriteRead(0x00);
-    img[i].width = W25QxxWriteRead(0x00) << 0x08;
-    img[i].width |= W25QxxWriteRead(0x00);
-    img[i].height = W25QxxWriteRead(0x00) << 0x08;
-    img[i].height |= W25QxxWriteRead(0x00);
-    img[i].type = W25QxxWriteRead(0x00);
-    img[i].pictures = W25QxxWriteRead(0x00);
-    img[i].fps = W25QxxWriteRead(0x00);
-    img[i].a = W25QxxWriteRead(0x00);
-    img[i].b = W25QxxWriteRead(0x00);
-    img[i].c = W25QxxWriteRead(0x00);
-  }
-  W25Qxx_CS_HIGHT;
-}
-
 void W25QxxInit(void){
   GPIOA->CRL &= ~(GPIO_CRL_CNF4 | GPIO_CRL_CNF5 | GPIO_CRL_CNF7);
   GPIOA->CRL |= GPIO_CRL_CNF5_1 | GPIO_CRL_CNF7_1;
@@ -163,5 +138,4 @@ void W25QxxInit(void){
   #if defined DEBUG_W25QXX
     printf("< OK >    EEPROM : %s\r\n", w25qxx.name);
   #endif
-  W25QxxReadTable();
 }

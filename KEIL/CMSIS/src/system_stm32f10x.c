@@ -1045,12 +1045,12 @@ static void SetSysClockTo72(void)
     }
     
    
-    /* PLL configuration: PLLCLK = PREDIV1 * 9 = 72 MHz */ 
+    /* PLL configuration: PLLCLK = PREDIV1 * 8 = 80 MHz */ 
     RCC->CFGR &= (uint32_t)~(RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL);
     RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLSRC_PREDIV1 | 
-                            RCC_CFGR_PLLMULL9); 
+                            RCC_CFGR_PLLMULL8); 
 #else    
-    /*  PLL configuration: PLLCLK = HSE * 9 = 72 MHz */
+    /*  PLL configuration: PLLCLK = HSE * 8 = 80 MHz */
     RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE |
                                         RCC_CFGR_PLLMULL));
     RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL8);

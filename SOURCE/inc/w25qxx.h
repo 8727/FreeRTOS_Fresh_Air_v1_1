@@ -3,7 +3,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
-#include "ili9488.h"
 
 /* Define --------------------------------------------------------------------*/
 #define W25Qxx_CS_LOW      GPIOA->BSRR = GPIO_BSRR_BR4
@@ -47,7 +46,6 @@ void W25QxxErase(void);
 void W25QxxEraseBlocks(void);
 void W25QxxReadPage(uint16_t page, uint8_t *buff);
 void W25QxxWritePage(uint16_t page, uint8_t *buff);
-void W25QxxReadTable(void);
 void W25QxxInit(void);
 //void W25QxxDMAInit(void);
 

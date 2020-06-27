@@ -13,21 +13,12 @@
 #define INFO
 #define DEBUG_SETTING
 #define DEBUG_EE24CXX
-#define DEBUG_IN
-#define DEBUG_GIDROLOCK
-#define DEBUG_HEATING
-#define DEBUG_FAN
 #define DEBUG_RTC
 #define DEBUG_W25QXX
-#define DEBUG_LCD
-#define DEBUG_GUI
-#define DEBUG_ADC
-#define DEBUG_DS18B20
-#define DEBUG_DHT22
 #define DEBUG_CAN
 #define DEBUG_RS485
 #define DEBUG_NRF24
-#define DEBUG_BEEP
+
 
 /* Define --------------------------------------------------------------------*/
 #define true    0x01
